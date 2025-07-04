@@ -27,8 +27,8 @@ export default function MorphingCard({ title, description, icon, hoverContent, c
           className={`transition-all duration-500 ${isHovered ? "opacity-0 translate-y-4" : "opacity-100 translate-y-0"}`}
         >
           <div className="mb-4">{icon}</div>
-          <h3 className="text-xl font-semibold text-white mb-2">{title}</h3>
-          <p className="text-gray-400">{description}</p>
+          <h3 className="text-xl font-semibold text-foreground mb-2">{title}</h3>
+          <p className="text-muted-foreground">{description}</p>
         </div>
 
         <div

@@ -58,9 +58,9 @@ export default function FAQSection() {
           <div className="text-center mb-12 md:mb-16">
             <div className="flex items-center justify-center gap-3 mb-4">
               <HelpCircle className="h-8 w-8 md:h-10 md:w-10 text-blue-400" />
-              <h2 className="text-3xl md:text-5xl font-black text-white">Frequently Asked Questions</h2>
+              <h2 className="text-3xl md:text-5xl font-black text-foreground">Frequently Asked Questions</h2>
             </div>
-            <p className="text-lg md:text-xl text-gray-300">
+            <p className="text-lg md:text-xl text-muted-foreground">
               Everything you need to know about our programs and admissions
             </p>
           </div>
@@ -70,20 +70,20 @@ export default function FAQSection() {
           {faqs.map((faq, index) => (
             <ScrollReveal key={index} delay={index * 0.1}>
               <motion.div
-                className="bg-gray-900/80 backdrop-blur-sm rounded-2xl shadow-lg hover:shadow-xl transition-all duration-300 border border-gray-700/50 overflow-hidden"
+                className="bg-background/80 backdrop-blur-sm rounded-2xl shadow-lg hover:shadow-xl transition-all duration-300 border border-gray-700/50 overflow-hidden"
                 whileHover={{ scale: 1.02 }}
               >
                 <button
                   className="w-full px-6 md:px-8 py-6 md:py-8 text-left flex items-center justify-between focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-inset"
                   onClick={() => setOpenIndex(openIndex === index ? null : index)}
                 >
-                  <h3 className="text-lg md:text-xl font-bold text-white pr-4">{faq.question}</h3>
+                  <h3 className="text-lg md:text-xl font-bold text-foreground pr-4">{faq.question}</h3>
                   <motion.div
                     animate={{ rotate: openIndex === index ? 180 : 0 }}
                     transition={{ duration: 0.3 }}
                     className="flex-shrink-0"
                   >
-                    <ChevronDown className="h-5 w-5 md:h-6 md:w-6 text-gray-400" />
+                    <ChevronDown className="h-5 w-5 md:h-6 md:w-6 text-muted-foreground" />
                   </motion.div>
                 </button>
 
@@ -97,7 +97,7 @@ export default function FAQSection() {
                       className="overflow-hidden"
                     >
                       <div className="px-6 md:px-8 pb-6 md:pb-8">
-                        <p className="text-gray-300 leading-relaxed text-base md:text-lg">{faq.answer}</p>
+                        <p className="text-muted-foreground leading-relaxed text-base md:text-lg">{faq.answer}</p>
                       </div>
                     </motion.div>
                   )}

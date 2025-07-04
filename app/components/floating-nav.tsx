@@ -31,7 +31,7 @@ export default function FloatingNav() {
         isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-4"
       }`}
     >
-      <div className="bg-black/20 backdrop-blur-md border border-white/10 rounded-full px-6 py-3">
+      <div className="bg-background/20 backdrop-blur-md border border-white/10 rounded-full px-6 py-3">
         <div className="flex items-center gap-4">
           {navItems.map((item) => (
             <Link
@@ -39,8 +39,8 @@ export default function FloatingNav() {
               href={item.href}
               className={`p-3 rounded-full transition-all duration-300 hover:scale-110 ${
                 activeSection === item.id
-                  ? "bg-blue-600 text-white"
-                  : "text-gray-400 hover:text-white hover:bg-white/10"
+                  ? "bg-blue-600 text-foreground"
+                  : "text-muted-foreground hover:text-foreground hover:bg-white/10"
               }`}
               onClick={() => setActiveSection(item.id)}
             >

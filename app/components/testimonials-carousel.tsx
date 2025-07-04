@@ -90,9 +90,9 @@ export default function TestimonialsCarousel() {
           <div className="text-center mb-12 md:mb-16">
             <div className="flex items-center justify-center gap-3 mb-4">
               <Quote className="h-8 w-8 md:h-10 md:w-10 text-purple-400" />
-              <h2 className="text-3xl md:text-5xl font-black text-white">Success Stories</h2>
+              <h2 className="text-3xl md:text-5xl font-black text-foreground">Success Stories</h2>
             </div>
-            <p className="text-lg md:text-xl text-gray-300">
+            <p className="text-lg md:text-xl text-muted-foreground">
               Hear from our graduates who are now thriving in top tech companies
             </p>
           </div>
@@ -110,7 +110,7 @@ export default function TestimonialsCarousel() {
                 transition={{ duration: 0.5, ease: "easeInOut" }}
                 className="absolute inset-0"
               >
-                <div className="bg-gray-900/90 backdrop-blur-sm rounded-3xl p-8 md:p-12 shadow-2xl border border-gray-700/50 h-full flex flex-col justify-between">
+                <div className="bg-background/90 backdrop-blur-sm rounded-3xl p-8 md:p-12 shadow-2xl border border-gray-700/50 h-full flex flex-col justify-between">
                   <div>
                     {/* Rating */}
                     <div className="flex items-center gap-1 mb-6">
@@ -120,7 +120,7 @@ export default function TestimonialsCarousel() {
                     </div>
 
                     {/* Quote */}
-                    <blockquote className="text-lg md:text-xl lg:text-2xl text-gray-200 leading-relaxed mb-8 italic">
+                    <blockquote className="text-lg md:text-xl lg:text-2xl text-muted-foreground leading-relaxed mb-8 italic">
                       "{testimonials[currentIndex].content}"
                     </blockquote>
                   </div>
@@ -136,11 +136,11 @@ export default function TestimonialsCarousel() {
                       />
                     </div>
                     <div>
-                      <h4 className="text-xl md:text-2xl font-bold text-white">{testimonials[currentIndex].name}</h4>
+                      <h4 className="text-xl md:text-2xl font-bold text-foreground">{testimonials[currentIndex].name}</h4>
                       <p className="text-purple-400 font-semibold text-base md:text-lg">
                         {testimonials[currentIndex].role}
                       </p>
-                      <p className="text-gray-400 text-sm md:text-base">
+                      <p className="text-muted-foreground text-sm md:text-base">
                         {testimonials[currentIndex].program} Graduate
                       </p>
                     </div>
@@ -153,16 +153,16 @@ export default function TestimonialsCarousel() {
           {/* Navigation buttons */}
           <button
             onClick={prevTestimonial}
-            className="absolute left-4 top-1/2 -translate-y-1/2 w-12 h-12 md:w-14 md:h-14 bg-gray-900/90 backdrop-blur-sm rounded-full shadow-lg hover:shadow-xl transition-all duration-300 flex items-center justify-center group border border-gray-700/50"
+            className="absolute left-4 top-1/2 -translate-y-1/2 w-12 h-12 md:w-14 md:h-14 bg-background/90 backdrop-blur-sm rounded-full shadow-lg hover:shadow-xl transition-all duration-300 flex items-center justify-center group border border-gray-700/50"
           >
-            <ChevronLeft className="h-6 w-6 md:h-7 md:w-7 text-gray-300 group-hover:text-purple-400 transition-colors" />
+            <ChevronLeft className="h-6 w-6 md:h-7 md:w-7 text-muted-foreground group-hover:text-purple-400 transition-colors" />
           </button>
 
           <button
             onClick={nextTestimonial}
-            className="absolute right-4 top-1/2 -translate-y-1/2 w-12 h-12 md:w-14 md:h-14 bg-gray-900/90 backdrop-blur-sm rounded-full shadow-lg hover:shadow-xl transition-all duration-300 flex items-center justify-center group border border-gray-700/50"
+            className="absolute right-4 top-1/2 -translate-y-1/2 w-12 h-12 md:w-14 md:h-14 bg-background/90 backdrop-blur-sm rounded-full shadow-lg hover:shadow-xl transition-all duration-300 flex items-center justify-center group border border-gray-700/50"
           >
-            <ChevronRight className="h-6 w-6 md:h-7 md:w-7 text-gray-300 group-hover:text-purple-400 transition-colors" />
+            <ChevronRight className="h-6 w-6 md:h-7 md:w-7 text-muted-foreground group-hover:text-purple-400 transition-colors" />
           </button>
 
           {/* Dots indicator */}
@@ -175,7 +175,7 @@ export default function TestimonialsCarousel() {
                   setIsAutoPlaying(false)
                 }}
                 className={`w-3 h-3 rounded-full transition-all duration-300 ${
-                  index === currentIndex ? "bg-purple-400 w-8" : "bg-gray-600 hover:bg-gray-500"
+                  index === currentIndex ? "bg-purple-400 w-8" : "bg-gray-600 hover:bg-background0"
                 }`}
               />
             ))}

@@ -21,7 +21,7 @@ export default function ApplicationPopup({ open, onOpenChange }: ApplicationPopu
         </DialogHeader>
 
         <div className="space-y-4">
-          <p className="text-gray-600 dark:text-gray-300">
+          <p className="text-muted-foreground dark:text-muted-foreground">
             We're currently not accepting new applications for our programs. Our next enrollment period will begin soon!
           </p>
 

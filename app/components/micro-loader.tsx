@@ -1,41 +1,41 @@
-"use client"
+"use client";
 
-import { useState, useEffect } from "react"
-import { motion, AnimatePresence } from "framer-motion"
+import { useState, useEffect } from "react";
+import { motion, AnimatePresence } from "framer-motion";
 
 interface MicroLoaderProps {
-  onComplete: () => void
+  onComplete: () => void;
 }
 
 export default function MicroLoader({ onComplete }: MicroLoaderProps) {
-  const [progress, setProgress] = useState(0)
-  const [stage, setStage] = useState(0) // 0: loading, 1: logo reveal, 2: complete
+  const [progress, setProgress] = useState(0);
+  const [stage, setStage] = useState(0); // 0: loading, 1: logo reveal, 2: complete
 
   useEffect(() => {
     const timer = setInterval(() => {
       setProgress((prev) => {
-        const increment = Math.random() * 4 + 1
-        const newProgress = Math.min(prev + increment, 100)
+        const increment = Math.random() * 4 + 1;
+        const newProgress = Math.min(prev + increment, 100);
 
         if (newProgress >= 100) {
-          clearInterval(timer)
-          setTimeout(() => setStage(1), 300)
-          setTimeout(() => setStage(2), 1500)
-          setTimeout(onComplete, 2200)
+          clearInterval(timer);
+          setTimeout(() => setStage(1), 300);
+          setTimeout(() => setStage(2), 1500);
+          setTimeout(onComplete, 2200);
         }
 
-        return newProgress
-      })
-    }, 60)
+        return newProgress;
+      });
+    }, 60);
 
-    return () => clearInterval(timer)
-  }, [onComplete])
+    return () => clearInterval(timer);
+  }, [onComplete]);
 
   return (
     <AnimatePresence>
       {stage < 2 && (
         <motion.div
-          className="fixed inset-0 z-[9999] bg-black flex items-center justify-center"
+          className="fixed inset-0 z-[9999] bg-background flex items-center justify-center"
           exit={{
             opacity: 0,
             scale: 0.8,
@@ -46,9 +46,9 @@ export default function MicroLoader({ onComplete }: MicroLoaderProps) {
             {stage === 0 && (
               <>
                 {/* Simple progress bar like Micro */}
-                <div className="w-64 h-0.5 bg-gray-800 rounded-full mb-8 mx-auto overflow-hidden">
+                <div className="w-64 h-1 bg-muted border border-border rounded-full mb-8 mx-auto overflow-hidden shadow-sm">
                   <motion.div
-                    className="h-full bg-white rounded-full"
+                    className="h-full bg-gradient-to-r from-blue-500 to-purple-500 rounded-full shadow-lg"
                     initial={{ width: 0 }}
                     animate={{ width: `${progress}%` }}
                     transition={{ duration: 0.1, ease: "easeOut" }}
@@ -57,7 +57,7 @@ export default function MicroLoader({ onComplete }: MicroLoaderProps) {
 
                 {/* Minimal text */}
                 <motion.p
-                  className="text-gray-500 text-sm font-medium tracking-wider uppercase"
+                  className="text-muted-foreground text-sm font-medium tracking-wider uppercase"
                   initial={{ opacity: 0 }}
                   animate={{ opacity: 1 }}
                   transition={{ delay: 0.2 }}
@@ -76,7 +76,7 @@ export default function MicroLoader({ onComplete }: MicroLoaderProps) {
               >
                 {/* Clean logo reveal */}
                 <motion.div
-                  className="text-4xl md:text-5xl font-bold text-white mb-4"
+                  className="text-4xl md:text-5xl font-bold text-foreground mb-4"
                   initial={{ opacity: 0 }}
                   animate={{ opacity: 1 }}
                   transition={{ duration: 0.8 }}
@@ -85,7 +85,7 @@ export default function MicroLoader({ onComplete }: MicroLoaderProps) {
                 </motion.div>
 
                 <motion.p
-                  className="text-gray-400 text-sm tracking-wide"
+                  className="text-muted-foreground text-sm tracking-wide"
                   initial={{ opacity: 0 }}
                   animate={{ opacity: 1 }}
                   transition={{ duration: 0.6, delay: 0.3 }}
@@ -98,5 +98,5 @@ export default function MicroLoader({ onComplete }: MicroLoaderProps) {
         </motion.div>
       )}
     </AnimatePresence>
-  )
+  );
 }

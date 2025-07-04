@@ -37,8 +37,8 @@ export default function PartnersCarousel() {
     <section className="py-12 md:py-16 relative">
       <div className="max-w-7xl mx-auto px-4 md:px-6 lg:px-8">
         <div className="text-center mb-8 md:mb-12">
-          <h3 className="text-2xl md:text-3xl font-bold text-white mb-4">Trusted & Certified</h3>
-          <p className="text-gray-300">Recognized by leading organizations and government bodies</p>
+          <h3 className="text-2xl md:text-3xl font-bold text-foreground mb-4">Trusted & Certified</h3>
+          <p className="text-muted-foreground">Recognized by leading organizations and government bodies</p>
         </div>
 
         <div className="flex justify-center items-center">
@@ -56,7 +56,7 @@ export default function PartnersCarousel() {
                     exit={{ opacity: 0, y: -20 }}
                     transition={{ duration: 0.5 }}
                   >
-                    <div className="relative w-20 h-20 md:w-24 md:h-24 mb-3 bg-gray-800 rounded-xl p-3 shadow-lg">
+                    <div className="relative w-20 h-20 md:w-24 md:h-24 mb-3 bg-muted rounded-xl p-3 shadow-lg">
                       <Image
                         src={partner.logo || "/placeholder.svg"}
                         alt={partner.name}
@@ -64,8 +64,8 @@ export default function PartnersCarousel() {
                         className="object-contain p-2"
                       />
                     </div>
-                    <h4 className="font-semibold text-white text-sm md:text-base">{partner.name}</h4>
-                    <p className="text-xs text-gray-400 text-center max-w-32">{partner.description}</p>
+                    <h4 className="font-semibold text-foreground text-sm md:text-base">{partner.name}</h4>
+                    <p className="text-xs text-muted-foreground text-center max-w-32">{partner.description}</p>
                   </motion.div>
                 ))}
               </AnimatePresence>

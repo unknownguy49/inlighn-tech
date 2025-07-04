@@ -42,7 +42,7 @@ export default function AdvancedLoader({ onComplete }: AdvancedLoaderProps) {
     <AnimatePresence>
       {stage < 2 && (
         <motion.div
-          className="fixed inset-0 z-[9999] bg-black flex items-center justify-center overflow-hidden"
+          className="fixed inset-0 z-[9999] bg-background flex items-center justify-center overflow-hidden"
           exit={{
             clipPath: "circle(0% at 50% 50%)",
             transition: { duration: 1.2, ease: "easeInOut" },
@@ -96,7 +96,7 @@ export default function AdvancedLoader({ onComplete }: AdvancedLoaderProps) {
               <>
                 {/* Progress Counter with glitch effect */}
                 <motion.div
-                  className="relative text-8xl md:text-9xl font-mono font-black text-white mb-8"
+                  className="relative text-8xl md:text-9xl font-mono font-black text-foreground mb-8"
                   initial={{ opacity: 0, scale: 0.5 }}
                   animate={{ opacity: 1, scale: 1 }}
                   transition={{ duration: 0.8 }}
@@ -128,7 +128,7 @@ export default function AdvancedLoader({ onComplete }: AdvancedLoaderProps) {
                 </motion.div>
 
                 {/* Advanced progress bar */}
-                <div className="w-96 h-2 bg-gray-800 rounded-full mb-8 mx-auto overflow-hidden relative">
+                <div className="w-96 h-2 bg-muted rounded-full mb-8 mx-auto overflow-hidden relative">
                   <motion.div
                     className="h-full bg-gradient-to-r from-blue-500 via-purple-500 to-cyan-500 rounded-full relative"
                     initial={{ width: 0 }}
@@ -150,7 +150,7 @@ export default function AdvancedLoader({ onComplete }: AdvancedLoaderProps) {
 
                 {/* Loading text with typewriter effect */}
                 <motion.div
-                  className="text-gray-400 text-xl font-medium tracking-wider"
+                  className="text-muted-foreground text-xl font-medium tracking-wider"
                   key={loadingText}
                   initial={{ opacity: 0, y: 10 }}
                   animate={{ opacity: 1, y: 0 }}
@@ -176,7 +176,7 @@ export default function AdvancedLoader({ onComplete }: AdvancedLoaderProps) {
               >
                 {/* Logo reveal with advanced animation */}
                 <motion.div
-                  className="text-6xl md:text-8xl font-black text-white mb-6"
+                  className="text-6xl md:text-8xl font-black text-foreground mb-6"
                   initial={{ opacity: 0 }}
                   animate={{ opacity: 1 }}
                   transition={{ duration: 1 }}
@@ -201,7 +201,7 @@ export default function AdvancedLoader({ onComplete }: AdvancedLoaderProps) {
 
                 {/* Subtitle */}
                 <motion.p
-                  className="text-gray-400 text-xl tracking-wide"
+                  className="text-muted-foreground text-xl tracking-wide"
                   initial={{ opacity: 0, y: 20 }}
                   animate={{ opacity: 1, y: 0 }}
                   transition={{ duration: 0.6, delay: 0.8 }}
